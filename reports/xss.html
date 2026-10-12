@@ -1,0 +1,65 @@
+
+    <html><head><title>WebShield Report</title></head><body>
+    <h1>WebShield Report</h1>
+    <table border="1">
+    <tr><th>Name</th><th>Severity</th><th>URL</th><th>Remediation</th></tr>
+    
+    <tr>
+        <td>Missing security header: Content-Security-Policy</td>
+        <td>Medium</td>
+        <td>http://127.0.0.1:5000/search?q=test</td>
+        <td>Add a CSP to reduce XSS risk.</td>
+    </tr>
+    
+    <tr>
+        <td>Missing security header: X-Frame-Options</td>
+        <td>Medium</td>
+        <td>http://127.0.0.1:5000/search?q=test</td>
+        <td>Set X-Frame-Options: DENY or SAMEORIGIN.</td>
+    </tr>
+    
+    <tr>
+        <td>Missing security header: X-Content-Type-Options</td>
+        <td>Low</td>
+        <td>http://127.0.0.1:5000/search?q=test</td>
+        <td>Set X-Content-Type-Options: nosniff.</td>
+    </tr>
+    
+    <tr>
+        <td>Missing security header: Strict-Transport-Security</td>
+        <td>Medium</td>
+        <td>http://127.0.0.1:5000/search?q=test</td>
+        <td>Use HSTS when HTTPS is enabled.</td>
+    </tr>
+    
+    <tr>
+        <td>Missing security header: Referrer-Policy</td>
+        <td>Low</td>
+        <td>http://127.0.0.1:5000/search?q=test</td>
+        <td>Set a strict Referrer-Policy.</td>
+    </tr>
+    
+    <tr>
+        <td>Missing security header: Permissions-Policy</td>
+        <td>Low</td>
+        <td>http://127.0.0.1:5000/search?q=test</td>
+        <td>Restrict browser features.</td>
+    </tr>
+    
+    <tr>
+        <td>Exposed sensitive path: /.env</td>
+        <td>High</td>
+        <td>http://127.0.0.1:5000/.env</td>
+        <td>Remove or restrict access to this file/directory.</td>
+    </tr>
+    
+    <tr>
+        <td>Reflected XSS</td>
+        <td>High</td>
+        <td>http://127.0.0.1:5000/search?q=%22%3E%3CWSHIELD_XSS%3E</td>
+        <td>Encode output and use a strict Content-Security-Policy.</td>
+    </tr>
+    
+    </table>
+    </body></html>
+    

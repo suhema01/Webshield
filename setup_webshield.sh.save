@@ -1,0 +1,4 @@
+bash setup_webshield.sh
+cd webshield-project
+source venv/bin/activate
+

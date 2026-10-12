@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Missing security header: Content-Security-Policy",
+    "severity": "Medium",
+    "url": "http://127.0.0.1:5000",
+    "parameter": null,
+    "description": "The response does not include Content-Security-Policy.",
+    "remediation": "Add a CSP to reduce XSS risk.",
+    "evidence": "",
+    "scanner": "headers",
+    "fixed": false
+  },
+  {
+    "name": "Missing security header: X-Frame-Options",
+    "severity": "Medium",
+    "url": "http://127.0.0.1:5000",
+    "parameter": null,
+    "description": "The response does not include X-Frame-Options.",
+    "remediation": "Set X-Frame-Options: DENY or SAMEORIGIN.",
+    "evidence": "",
+    "scanner": "headers",
+    "fixed": false
+  },
+  {
+    "name": "Missing security header: X-Content-Type-Options",
+    "severity": "Low",
+    "url": "http://127.0.0.1:5000",
+    "parameter": null,
+    "description": "The response does not include X-Content-Type-Options.",
+    "remediation": "Set X-Content-Type-Options: nosniff.",
+    "evidence": "",
+    "scanner": "headers",
+    "fixed": false
+  },
+  {
+    "name": "Missing security header: Strict-Transport-Security",
+    "severity": "Medium",
+    "url": "http://127.0.0.1:5000",
+    "parameter": null,
+    "description": "The response does not include Strict-Transport-Security.",
+    "remediation": "Use HSTS when HTTPS is enabled.",
+    "evidence": "",
+    "scanner": "headers",
+    "fixed": false
+  },
+  {
+    "name": "Missing security header: Referrer-Policy",
+    "severity": "Low",
+    "url": "http://127.0.0.1:5000",
+    "parameter": null,
+    "description": "The response does not include Referrer-Policy.",
+    "remediation": "Set a strict Referrer-Policy.",
+    "evidence": "",
+    "scanner": "headers",
+    "fixed": false
+  },
+  {
+    "name": "Missing security header: Permissions-Policy",
+    "severity": "Low",
+    "url": "http://127.0.0.1:5000",
+    "parameter": null,
+    "description": "The response does not include Permissions-Policy.",
+    "remediation": "Restrict browser features.",
+    "evidence": "",
+    "scanner": "headers",
+    "fixed": false
+  },
+  {
+    "name": "Insecure cookie: session",
+    "severity": "Medium",
+    "url": "http://127.0.0.1:5000",
+    "parameter": null,
+    "description": "Cookie issues: missing Secure, missing HttpOnly, missing SameSite",
+    "remediation": "Set Secure, HttpOnly, and SameSite=Lax/Strict.",
+    "evidence": "",
+    "scanner": "cookies",
+    "fixed": false
+  },
+  {
+    "name": "Exposed sensitive path: /.env",
+    "severity": "High",
+    "url": "http://127.0.0.1:5000/.env",
+    "parameter": null,
+    "description": "The path /.env returned HTTP 200.",
+    "remediation": "Remove or restrict access to this file/directory.",
+    "evidence": "",
+    "scanner": "sensitive_files",
+    "fixed": false
+  }
+]
